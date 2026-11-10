@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#c9e8dc" />
+  <title>Solace Cove — A Little Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="world" aria-label="3D world of Solace Cove"></canvas>
+    <div class="sun-glow"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">☼</div><div><span class="brand-name">solace cove</span><span class="brand-caption">a little life, at your pace</span></div></div>
+      <div class="top-right"><div class="weather"><span class="weather-icon">☀</span><span>Sunny</span><i></i><span>22°</span></div><div class="day-pill"><span>MON</span><b>08:24</b></div><button id="sound-btn" class="icon-btn" aria-label="Toggle sound">♫</button></div>
+    </header>
+    <section class="quest-card glass">
+      <div class="quest-heading"><div class="quest-icon">✿</div><div><span class="eyebrow">TODAY'S LITTLE THINGS</span><h1>A softer kind of morning</h1></div><button class="collapse-btn" id="quest-toggle" aria-label="Collapse tasks">⌃</button></div>
+      <div class="quest-list" id="quest-list"></div>
+      <div class="quest-footer"><span>Take your time. There's no rush.</span><span class="reward">✦ &nbsp; +<b id="reward-count">0</b> shells</span></div>
+    </section>
+    <div class="right-rail">
+      <button class="rail-button glass" id="map-button"><span>⌖</span><small>MAP</small></button>
+      <button class="rail-button glass" id="journal-button"><span>▤</span><small>JOURNAL</small></button>
+    </div>
+    <div class="player-chip glass"><div class="avatar-mini">✿</div><div><b>Mina</b><span>Garden day</span></div><div class="mood"><i></i><i></i><i></i><i></i><i></i></div></div>
+    <div class="interaction-prompt glass" id="prompt"><span class="prompt-key">E</span><span id="prompt-text">Say hello</span></div>
+    <div class="toast" id="toast"></div>
+    <div class="level-up glass" id="level-up"><span>✦</span><div><b>Little things add up!</b><small>Your day is looking lovely.</small></div></div>
+    <div class="controls-hint"><span>WASD</span> to wander <i>·</i> <span>E</span> to interact</div>
+    <div class="mobile-controls" aria-label="Touch movement controls">
+      <div id="joystick" class="joystick"><div class="stick-ring"></div><div class="stick-knob" id="stick-knob"></div></div>
+      <button class="action-button" id="action-button"><span>✦</span><small>DO</small></button>
+    </div>
+    <div class="map-overlay glass" id="map-overlay"><button id="map-close" class="close-btn">×</button><span class="eyebrow">YOUR NEIGHBORHOOD</span><h2>Solace Cove</h2><div class="map-art"><span class="map-home">⌂</span><span class="map-you">●</span><span class="map-pond">≈</span><span class="map-label label-home">YOUR HOME</span><span class="map-label label-garden">FLOWER GARDEN</span><span class="map-label label-pond">THE POND</span></div><p>A tiny corner of the world to call your own.</p></div>
+    <div class="journal-overlay glass" id="journal-overlay"><button id="journal-close" class="close-btn">×</button><span class="eyebrow">MINA'S JOURNAL · DAY 01</span><h2>Small joys, collected</h2><div class="journal-note">“The air smelled like salt and citrus this morning. I think I’ll take the long way home.”</div><div class="journal-stats"><div><b id="journal-done">0 / 3</b><span>little things done</span></div><div><b id="shell-total">12</b><span>shells tucked away</span></div></div><p>There's something lovely waiting in every corner.</p></div>
+    <div class="loading-screen" id="loading"><div class="loading-mark">☼</div><span>Waking up in Solace Cove…</span></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
